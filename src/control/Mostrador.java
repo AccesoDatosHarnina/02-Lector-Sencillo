@@ -13,6 +13,7 @@ public class Mostrador {
 	}
 
 	public void mostrarPagina(JTextArea textArea) {
+		//Aqui se guarda el primer byte de la pagina
 		StringBuilder cadena = new StringBuilder();
 		// TODO igual el textArea sabe el tamaño de letra
 		double height2 = 18;

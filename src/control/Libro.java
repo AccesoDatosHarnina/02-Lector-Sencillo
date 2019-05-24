@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -19,7 +20,13 @@ public class Libro {
 		super();
 		if (validarLibro(ruta)) {
 			libro = abrirLibro(new File(ruta));
+			try {
+				libro.skip(6000);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
+		BufferedReader buffReader=new BufferedReader(libro);
 	}
 
 	public String damecaracter() throws IOException {
